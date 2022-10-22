@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import "./App.css";
+import Landing from "./components/Landing/Landing";
+import Item from "./components/Item";
+import UploadItem from "./components/UploadItem";
+import CloudinaryUploadWdget from "./components/CloudinaryUploadWdget";
+import Carousel from "./components/Carousel";
+import AllProducts from "./components/Products/AllProducts";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavbarComponent from "./components/Navbar";
+import SingleProduct from "./components/Products/SingleProduct";
+import Cart from "./components/Cart/Cart";
+import CatUpload from "./components/CatUpload";
+import { useState } from "react";
+import Map from "./components/Map";
+import Checkout from "./components/Cart/Checkout";
+import Profile from "./components/Profile";
+import UploadWaste from "./components/UploadWaste";
 
-function App() {
+function App(user, signOut) {
+  const [cartInfo, setCartInfo] = useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App ">
+        <NavbarComponent cartInfo={cartInfo} />
+        <Switch>
+          <div className="content">
+            <Route exact path="/">
+              {/* <Cart /> */}
+              <Landing />
+              {/* <CatUpload /> */}
+              {/* <Map /> */}
+              {/* <Checkout /> */}
+              {/* <Profile /> */}
+            </Route>
+
+            {/* <UploadItem /> */}
+            {/* <Item /> */}
+            {/* <Carousel /> */}
+            <Route path="/indProduct/:id">
+              <SingleProduct />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/products/:val/:cat/:loc">
+              <AllProducts />
+            </Route>
+
+            <Route path="/upload">
+              <UploadItem />
+            </Route>
+            <Route path="/uploadWaste">
+              <UploadWaste />
+            </Route>
+          </div>
+        </Switch>
+
+        {/* <CloudinaryUploadWdget /> */}
+      </div>
+    </Router>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

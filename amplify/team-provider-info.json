@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wastestore-dev-154712-authRole",
+      "UnauthRoleArn": "arn:aws:iam::181280007769:role/amplify-wastestore-dev-154712-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::181280007769:role/amplify-wastestore-dev-154712-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-wastestore-dev-154712-deployment",
+      "UnauthRoleName": "amplify-wastestore-dev-154712-unauthRole",
+      "StackName": "amplify-wastestore-dev-154712",
+      "StackId": "arn:aws:cloudformation:us-east-1:181280007769:stack/amplify-wastestore-dev-154712/84a7b900-513e-11ed-8e7f-0e6cbdd23f15",
+      "AmplifyAppId": "dhi7blb478fkk"
+    },
+    "categories": {
+      "auth": {
+        "wastestore8e2aff63": {}
+      },
+      "api": {
+        "wastestore": {}
+      },
+      "storage": {
+        "s3wastestorestorage9f9d5406": {}
+      },
+      "geo": {
+        "map10d20681": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

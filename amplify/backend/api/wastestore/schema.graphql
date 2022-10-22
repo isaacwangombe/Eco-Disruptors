@@ -1,0 +1,51 @@
+type CartModel @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  itemId: String
+  units: Int
+  price: Int
+  points: Int
+  name: String
+  image: String
+  sold: Boolean
+  collected: Boolean
+}
+
+type Category @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  Image: String
+}
+
+type StoreItem @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  description: String!
+  price: Float!
+  image: String!
+  location: locationEnum
+  units: Int!
+  category: categoryEnum!
+  valueAdded: Boolean!
+}
+
+enum categoryEnum {
+  laptop
+  phone
+  hardDrive
+  monitor
+  computer
+  tv
+  cable
+  speaker
+  artwork
+  furniture
+  accessories
+}
+
+enum locationEnum {
+  southc
+  southb
+  kilimani
+  kileleshwa
+  rongai
+}

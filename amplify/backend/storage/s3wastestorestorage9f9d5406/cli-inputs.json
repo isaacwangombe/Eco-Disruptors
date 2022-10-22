@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3wastestorestorage9f9d5406",
+  "bucketName": "wastestore-storage-9f9d5406",
+  "policyUUID": "f376a102",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
